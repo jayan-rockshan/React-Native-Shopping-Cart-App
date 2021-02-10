@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "247389444011",
+    "project_id": "jsh-shopping-app",
+    "storage_bucket": "jsh-shopping-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:247389444011:android:ae6a1f4bbe08dd0ce624ee",
+        "android_client_info": {
+          "package_name": "com.jsh"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "247389444011-mra8lp0347jr8e7dvc8ck1b694savqeb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3VWOK6naL3W_6GXYU8uQD3RvDQsFUdmA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "247389444011-mra8lp0347jr8e7dvc8ck1b694savqeb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

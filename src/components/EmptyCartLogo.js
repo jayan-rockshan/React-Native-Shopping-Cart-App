@@ -1,13 +1,14 @@
 import React ,{Component} from "react";
 import { View,Text ,Image,StyleSheet} from "react-native";
 
-export default class LoginLogo extends React.Component{
+export default class EmptyCartLogo extends React.Component{
     render(){
       return(
         <View style={styles.container}>
+        <StatusBar backgroundColor="#1c313a" barStyle="light-content"/>
 				<Image  style={{width:150, height: 150}}
-          			source={require('../images/slogin.png')}/>
-          		<Text style={styles.logoText}>Access Process</Text>	
+          			source={require('../images/emptycart.png')}/>
+          		<Text style={styles.logoText}>No Item in your Cart !!</Text>	
   			</View>
       );
     }
@@ -16,14 +17,17 @@ export default class LoginLogo extends React.Component{
     {
       
       container : {
+          marginTop:100,
         flexGrow: 1,
-        justifyContent:'flex-end',
+        justifyContent:'center',
         alignItems: 'center'
       },
       logoText : {
-        marginVertical: 15,
+     
         fontSize:18,
-        color:'rgba(255, 255, 255, 0.7)'
+        color:'black',
+        fontWeight:'500',
+
       }
   
     }

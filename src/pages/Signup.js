@@ -1,43 +1,105 @@
-import React ,{Component} from "react";
-import { View,Text ,StatusBar,StyleSheet,SafeAreaView} from "react-native";
-import FormSignup from "../components/FormSignup" ;
+import React , {useContext, useState} from 'react';
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  Platform,
+  StyleSheet,
+  ScrollView,
+  StatusBar,
+} from 'react-native';
 
-/*in here i remove logologin page because it's not user friendly*/
-/*and if i want submit it again i can do passing this <LogoLogin> to in render method */
+import FormInput from '../components/FormInput';
+import FormButton from '../components/FormButton';
+import { AuthContext } from '../../navigation/AuthProvider';
 
-export default class Signup extends React.Component{
-    render(){
-      return(
-        <SafeAreaView>
-          <View >
-            <StatusBar backgroundColor="#1c313a" barStyle="light-content"/>
-            <FormSignup/>
-              <View style={styles.signupTextCont}>
-				      <Text style={styles.signupText} >Alredy have an account</Text>
-              <Text style={styles.sign}> Log in</Text>
-				    </View>
-          </View>
-        </SafeAreaView>
-      );
-    }
-  }
-  const styles = StyleSheet.create(
-    {
-      container :{ backgroundColor :"#455a64" ,flex :1 ,alignItems:"center" ,justifyContent :"center"},
-      signupTextCont : {
-        flexGrow: 1,
-        alignItems:'flex-end',
-        justifyContent :'center',
-        paddingVertical:12,
-        flexDirection:'row'
-      },
-      signupText: {
-        color:'rgba(255,255,255,0.6)',
-        fontSize:16
-      },
-      sign:{
-        fontSize:16
-      }
+const Signup = ({navigation}) => {
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
+  
+  const {register} =useContext(AuthContext);
+  return (
+    <View style={styles.container}>
+        <StatusBar backgroundColor="#1c313a" barStyle="light-content"/>
+        
+        
 
-    }
+        <FormInput
+          placeholderText="Name"
+          iconType="user"
+          autoCapitalize="none"
+          autoCorrect={false}
+        />
+
+        <FormInput
+          placeholderText="Phone-Number"
+          iconType="user"
+          autoCapitalize="none"
+          autoCorrect={false}
+        />
+
+        <FormInput
+          placeholderText="Cart-number"
+          iconType="user"
+          autoCapitalize="none"
+          autoCorrect={false}
+        />
+
+        <FormInput
+          labelValue={email}
+          onChangeText={(userEmail) => setEmail(userEmail)}
+          placeholderText="Email"
+          iconType="user"
+          keyboardType="email-address"
+          autoCapitalize="none"
+          autoCorrect={false}
+        />
+
+        <FormInput
+          labelValue={password}
+          onChangeText={(userPassword) => setPassword(userPassword)}
+          placeholderText="Password"
+          iconType="lock"
+          secureTextEntry={true}
+      />
+        <FormButton
+          buttonTitle="Sign In"
+          onPress={() => register(email , password)}
+      />
+       
+       <TouchableOpacity
+        style={styles.forgotButton}>
+          <Text style={styles.navButtonText}>
+            Don't have an acount? Create here
+          </Text>
+      </TouchableOpacity>
+      
+    </View>
   );
+};
+
+export default Signup;
+
+const styles = StyleSheet.create({
+  container: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 20,
+    paddingTop: 70,
+    backgroundColor: '#455a64',
+  },
+  
+  navButton: {
+    marginTop: 50,
+  },
+  forgotButton: {
+    marginVertical: 35,
+    marginTop: 120,
+  },
+  navButtonText: {
+    fontSize: 18,
+    fontWeight: '500',
+    color:'rgba(255, 255, 255, 0.7)',
+    
+  },
+});

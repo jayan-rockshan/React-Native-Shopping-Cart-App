@@ -1,30 +1,18 @@
-/*import React from "react";
-import { View,Text ,StyleSheet ,StatusBar} from "react-native";
-import Welcome from "./src/pages/Welcome"
-import Login from "./src/pages/Login" ;
-import Signup from "./src/pages/Signup" ;
 
+import React from 'react';
+import Providers from './navigation';
 
-export default class App extends React.Component{
-  render(){
-    return(
-      <View style={styles.container}>
-        <StatusBar backgroundColor="#1c313a" barStyle="light-content"/>
-        <Login/>
-      </View>
-    );
-  }
+const App = () => {
+
+  return <Providers/>
+
 }
-const styles = StyleSheet.create(
-  {
-    container :{ backgroundColor :"#455a64" ,flex :1 ,alignItems:"center" ,justifyContent :"center"}
 
-  }
-);
-*/
+export default App;
 
 
-
+/*******************************home screen **********************************/
+/*
 import React,{Component} from "react";
 import { View,Text} from "react-native";
 import {createBottomTabNavigator,createAppContainer} from 'react-navigation';
@@ -35,7 +23,7 @@ import ListProducts from "./src/pages/ListProducts" ;
 import ListOffers from "./src/pages/ListOffers" ;
 import Contact from "./src/pages/Contact";
 import Head from './src/components/Head';
-
+import Cart from './src/pages/Cart'
 
   class ContactScreen extends React.Component{
     render(){return (
@@ -46,9 +34,10 @@ import Head from './src/components/Head';
   }
   class CartScreen extends React.Component{
     render(){return (
-      <View style={{ flex: 1 }}>
-        <Head/>
-      </View>
+      
+      <View style={{ flex: 1}}>
+        <Cart/>
+    </View>
     );}
   }
   
@@ -78,4 +67,5 @@ const TabNavigator = createMaterialBottomTabNavigator({
   Contact1:{screen:ContactScreen,navigationOptions:{tabBarLabel:'Contact',activeColor:'white',inactiveColor:'black',barStyle:{backgroundColor:'#455a64'},tabBarIcon:()=>(<View><Icon name={'settings-phone'} size={25} style={{color:'white'}} /></View>)}},
 });
 
-export default createAppContainer(TabNavigator);
+export default createAppContainer(TabNavigator);*/
+
