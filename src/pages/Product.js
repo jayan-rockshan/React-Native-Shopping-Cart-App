@@ -1,27 +1,13 @@
-/*import React from 'react';
-import {
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
-import OfferListComponent from "../components/OfferListComponent";
-
-export default class Form extends React.Component {
-    render(){
-        return(
-            <OfferListComponent/>
-        )
-    }
-}*/
 import React ,{useState} from 'react';
 import { View, FlatList,TouchableOpacity,StyleSheet,Image} from 'react-native';
 import { Container, Header, Content, List, ListItem, Left, Body, Right, Thumbnail, Text ,Icon} from 'native-base';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import AppStack from '../../navigation/AppStack' ;
 
-import DetailOffers from './DetailOffers';
+import Head from '../components/Head';
 
-const HomeScreen = ({navigation}) => {
+const Product = ({navigation}) => {
 
   const [reviews, setReviews] = useState([
     { 
@@ -69,7 +55,7 @@ const HomeScreen = ({navigation}) => {
       image: require('../images/dot6.png'),
       discount:"20% Discount",
     },{ 
-      title: 'Shoese',
+      title: 'Shoes',
       description: 'In here I am going to add few words about how i did this application',
       Price: 37.00, 
       key: '7' ,
@@ -88,11 +74,12 @@ const HomeScreen = ({navigation}) => {
 
   return (
     <View >
+      <Head/>
       <FlatList
       data={reviews}
       renderItem={({item})=> (
               
-              <ListItem avatar onPress={() => navigation.navigate('Detail-Screen',item)}>
+              <ListItem avatar onPress={() => navigation.navigate('ProductPass',item)}>
                   
                   <Left>
                     <Image style={{height:55,width:55}} source={item.image} />
@@ -114,17 +101,4 @@ const HomeScreen = ({navigation}) => {
 );
 }
 
-const Stack = createStackNavigator();
-
-const ListOffers = () => {
-  return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={HomeScreen} options={{headerStyle:{backgroundColor:"#455a64"},headerTintColor:"white",title:'',headerStatusBarHeight:5}} />
-        <Stack.Screen name="Detail-Screen" component={DetailOffers} />
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
-}
-
-export default ListOffers;
+export default Product ;

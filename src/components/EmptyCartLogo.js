@@ -1,5 +1,5 @@
 import React ,{Component} from "react";
-import { View,Text ,Image,StyleSheet} from "react-native";
+import { View,Text ,Image,StyleSheet,StatusBar} from "react-native";
 
 export default class EmptyCartLogo extends React.Component{
     render(){

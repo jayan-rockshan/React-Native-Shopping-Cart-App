@@ -1,7 +1,7 @@
 import React ,{Component} from 'react';
 import { View,Text,Image,StyleSheet,TouchableOpacity} from 'react-native';
 
-export default function DetailOffers ({ route, navigation }) {
+export default function OfferPass ({ route, navigation }) {
     const { title,image,description ,Price,discount} = route.params;
     return (
         <View style={styles.Container}>

@@ -49,7 +49,7 @@ const Login = ({navigation}) => {
 
         <FormButton
           buttonTitle="Guest in"
-          onPress={() => alert('hello')}
+          onPress={() => navigation.navigate("TabNavigator")}
       />
 
         <TouchableOpacity

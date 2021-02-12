@@ -1,7 +1,7 @@
 import React, {useContext, useState, useEffect} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import AuthStack from './AuthStack';
-import AppStack from './AppStack' ;
+import TabNavigator from './TabNavigator' ;
 import {AuthContext} from './AuthProvider';
 import auth from '@react-native-firebase/auth';
 
@@ -23,7 +23,7 @@ const Routes = () => {
   
     return (
     <NavigationContainer>
-        {user ? <AppStack /> : <AuthStack />}
+        {user ? <TabNavigator /> : <AuthStack />}
     </NavigationContainer>
   );
 

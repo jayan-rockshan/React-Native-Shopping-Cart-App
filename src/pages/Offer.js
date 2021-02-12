@@ -1,31 +1,14 @@
-/*import React from 'react';
-import {
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
-import ProductListComponent from "../components/ProductListComponent";
-
-export default class Form extends React.Component {
-    render(){
-        return(
-            <ProductListComponent/>
-        )
-    }
-}*/
-
-
-
 import React ,{useState} from 'react';
 import { View, FlatList,TouchableOpacity,StyleSheet,Image} from 'react-native';
 import { Container, Header, Content, List, ListItem, Left, Body, Right, Thumbnail, Text ,Icon} from 'native-base';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import DetailProduct from './DetailProduct';
+
+import Head from '../components/Head';
 
 
-const HomeScreen = ({navigation}) => {
+const Offer = ({navigation}) => {
 
   const [reviews, setReviews] = useState([
     { 
@@ -92,11 +75,12 @@ const HomeScreen = ({navigation}) => {
 
   return (
     <View >
+        <Head/>
       <FlatList
       data={reviews}
       renderItem={({item})=> (
               
-              <ListItem avatar onPress={() => navigation.navigate('Detail-1-Screen',item)}>
+              <ListItem avatar onPress={() => navigation.navigate('OfferPass',item)}>
                   
                   <Left>
                     <Image style={{height:55,width:55}} source={item.image} />
@@ -118,17 +102,4 @@ const HomeScreen = ({navigation}) => {
 );
 }
 
-const Stack = createStackNavigator();
-
-const ListProducts = () => {
-  return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={HomeScreen} options={{headerStyle:{backgroundColor:"#455a64"},headerTintColor:"white",title:'',headerStatusBarHeight:5}} />
-        <Stack.Screen name="Detail-1-Screen" component={DetailProduct} />
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
-}
-
-export default ListProducts;
+export default Offer ;
