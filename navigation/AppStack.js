@@ -21,8 +21,8 @@ return(
         <Stack.Screen name="Cart" component={Cart} />
         <Stack.Screen name="Contact" component={Contact} />
         <Stack.Screen name="HomeScreen" component={HomeScreen} />
-        <Stack.Screen name="ProductPass" component={ProductPass} />
-        <Stack.Screen name="OfferPass" component={OfferPass} />
+        <Stack.Screen name="Product-Detail" component={ProductPass} />
+        <Stack.Screen name="Offer-Detail" component={OfferPass} />
     </Stack.Navigator>
     );
 

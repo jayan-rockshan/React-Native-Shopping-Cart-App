@@ -79,7 +79,7 @@ const Product = ({navigation}) => {
       data={reviews}
       renderItem={({item})=> (
               
-              <ListItem avatar onPress={() => navigation.navigate('ProductPass',item)}>
+              <ListItem avatar onPress={() => navigation.navigate('Product-Detail',item)}>
                   
                   <Left>
                     <Image style={{height:55,width:55}} source={item.image} />

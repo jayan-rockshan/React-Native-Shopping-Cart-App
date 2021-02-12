@@ -80,7 +80,7 @@ const Offer = ({navigation}) => {
       data={reviews}
       renderItem={({item})=> (
               
-              <ListItem avatar onPress={() => navigation.navigate('OfferPass',item)}>
+              <ListItem avatar onPress={() => navigation.navigate('Offer-Detail',item)}>
                   
                   <Left>
                     <Image style={{height:55,width:55}} source={item.image} />
