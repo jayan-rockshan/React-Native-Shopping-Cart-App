@@ -1,2 +1,2 @@
 # React-Native-Shopping-Cart-App
-Jayan Rockshan -In here I embedded Shopping Cart App plenty of files and we are still developing this app using react native cli
+Jayan Rockshan -here you can see my react native cli project ,and if you want to run this you have to clone first then run 'npx react-native run-android' then install all the packages using npm install  
